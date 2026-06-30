@@ -1,36 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="calcLogic.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advanced Calculator</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="calcLogic.js" defer></script>
-</head>
+  <body>
+    <section id="calc-body">
+      <section id="output-screen"></section>
 
-<body>
-  <section id="calc-body">
-    <section id="output-screen">
+      <section id="calc-buttons">
+        <section><!--AC, +/-, %, backspace--></section>
 
-    </section>
+        <section id="numbers">
+          <button class="btn number">7</button>
+          <button class="btn number">8</button>
+          <button class="btn number">9</button>
 
-    <section id="calc-buttons">
+          <button class="btn number">4</button>
+          <button class="btn number">5</button>
+          <button class="btn number">6</button>
 
-      <section> <!--AC, +/-, %, backspace-->
+          <button class="btn number">1</button>
+          <button class="btn number">2</button>
+          <button class="btn number">3</button>
 
+          <button class="btn number zero">0</button>
+
+          <button class="btn decimal">.</button>
+        </section>
+
+        <section><!--operators--></section>
       </section>
-
-      <section> <!--Numbers-->
-
-      </section>
-
-      <section> <!--operators-->
-
-      </section> 
-
     </section>
-  </section>
-</body>
-
+  </body>
 </html>
