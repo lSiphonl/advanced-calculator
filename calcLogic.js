@@ -22,6 +22,7 @@ function clearAll() {
     operator_1 = null;
     operator_2 = null;
     result = null;
+    waitingForOperand = false;
     updateDisplay();
 }
 
@@ -78,10 +79,42 @@ function calculate(num1, num2, operator) {
             return num1 * num2;
 
         case '/':
+            if (num2 === 0) {
+                return "BAD USER!";
+            }
             return num1 / num2;
 
         default:
             return num2;
+    }
+}
+
+function operate() {
+
+    if (
+        operand_1 !== null &&
+        operator_1 !== null &&
+        !waitingForOperand
+    ) {
+
+        result = calculate(
+            operand_1,
+            parseFloat(displayValue),
+            operator_1
+        );
+
+        if (typeof result === "string") {
+            displayValue = result;
+        } 
+        else {
+            displayValue = roundAccurately(result, 10).toString();
+        }
+
+        operand_1 = null;
+        operator_1 = null;
+        waitingForOperand = true;
+
+        updateDisplay();
     }
 }
 
