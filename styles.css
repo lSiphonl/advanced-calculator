@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: rgb(228, 228, 228);
+  background-color: #E4E4E4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,25 +30,22 @@ body {
 
 #display-screen {
   font-family: "Technology", sans-serif;
-  font-variant-numeric: tabular-nums;
   box-sizing: border-box;
   font-size: 72px;
   text-align: right;
   padding-right: 10px;
-  width: 85%;
+  width: 100%;
   margin: 5% 0% 0% 0%;
-  border: 3px solid black;
+  border: 3px solid #000000;
   background: linear-gradient(to bottom, #C2CBB5 0%, #A4B097 100%);
   color: #2B3324;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  white-space: nowrap;
+  box-shadow: inset 0px 4px 4px #00000064;
 }
 
 #calc-buttons {
   background-color: grey;
   padding: 10px;
-  width: 85%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 8px;

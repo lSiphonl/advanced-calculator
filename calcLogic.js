@@ -29,6 +29,9 @@ function clearAll() {
 function clearEntry() {
     if(displayValue.length > 1) {
         displayValue = displayValue.slice(0, -1);
+        if(displayValue === '-' || displayValue === '') {
+            displayValue = '0';
+        }
     }
     else {
         displayValue = '0';
