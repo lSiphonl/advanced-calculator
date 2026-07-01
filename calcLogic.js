@@ -64,6 +64,27 @@ function inputNumber(number) {
     updateDisplay();
 }
 
+function calculate(num1, num2, operator) {
+
+    switch(operator) {
+
+        case '+':
+            return num1 + num2;
+
+        case '-':
+            return num1 - num2;
+
+        case '*':
+            return num1 * num2;
+
+        case '/':
+            return num1 / num2;
+
+        default:
+            return num2;
+    }
+}
+
 function handleKeyboard(event) {
     const key = event.key;
     if (['1','2','3','4','5','6','7','8','9','0','.','+','-','*','/','%','~','=','Enter','Backspace','Escape'].includes(key)) {
