@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Technology";
+  src: url("./fonts/Technology/Technology.ttf") format("truetype");
+}
+
+body {
+  box-sizing: border-box;
+  background-color: grey;
+}
+
+#calc-body {
+  width: 400px;
+  height: 600px;
+  margin: auto;
+  border: 8px solid #1f2937;
+  background-color: #C2CBB5;
+}
+
+#display-screen {
+  font-family: "Technology", sans-serif;
+  box-sizing: border-box;
+  font-size: 72px;
+  text-align: right;
+  padding-right: 10px;
+  width: 85%;
+  margin: 5% 0% 0% 8%;
+  border: 3px solid black;
+  background: linear-gradient(to bottom, #C2CBB5 0%, #A4B097 100%);
+  color: #2B3324;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*Placeholder*/
+button {
+  font-size: 36px;
+  height: 100%;
+  margin: 5% 6% 0% 3%;
+  border: none;
+  background-color: #C0EE97;
+  color: #2B3324;
+}

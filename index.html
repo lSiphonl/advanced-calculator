@@ -10,27 +10,32 @@
 
   <body>
     <section id="calc-body">
-      <section id="output-screen"></section>
+      <section id="display-screen">0</section>
 
       <section id="calc-buttons">
-        <section><!--AC, +/-, %, backspace--></section>
+        <section><!--AC, +/-, %, backspace-->
+          <button class="btn-ac" value="clearAll">AC</button>
+          <button class="btn-backspace" value="clearEntry">CE</button>
+          <button class="btn-sign" value="sign">+/-</button>
+          <button class="btn-percent" value="%">%</button>
+        </section>
 
         <section id="numbers">
-          <button class="btn number">7</button>
-          <button class="btn number">8</button>
-          <button class="btn number">9</button>
+          <button class="btn-number">7</button>
+          <button class="btn-number">8</button>
+          <button class="btn-number">9</button>
 
-          <button class="btn number">4</button>
-          <button class="btn number">5</button>
-          <button class="btn number">6</button>
+          <button class="btn-number">4</button>
+          <button class="btn-number">5</button>
+          <button class="btn-number">6</button>
 
-          <button class="btn number">1</button>
-          <button class="btn number">2</button>
-          <button class="btn number">3</button>
+          <button class="btn-number">1</button>
+          <button class="btn-number">2</button>
+          <button class="btn-number">3</button>
 
-          <button class="btn number zero">0</button>
+          <button class="btn-number-zero">0</button>
 
-          <button class="btn decimal">.</button>
+          <button class="btn-decimal">.</button>
         </section>
 
         <section><!--operators--></section>
