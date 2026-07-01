@@ -4,6 +4,7 @@ let operand_2 = null;
 let operator_1 = null;
 let operator_2 = null;
 let result = null;
+let waitingForOperand = false;
 const buttons = document.querySelectorAll('button');
 
 function updateDisplay() {
@@ -49,11 +50,17 @@ function roundAccurately(number, placements) {
 }
 
 function inputNumber(number) {
-    if (displayValue === '0') {
+    if (waitingForOperand) {
         displayValue = number;
-    } else {
+        waitingForOperand = false;
+    } 
+    else if (displayValue === '0') {
+        displayValue = number;
+    } 
+    else {
         displayValue += number;
     }
+
     updateDisplay();
 }
 
@@ -96,23 +103,61 @@ function handleKeyboard(event) {
     }
 }
 
+function handleOperator(operator) {
+
+    if (operand_1 === null) {
+        operand_1 = parseFloat(displayValue);
+    } 
+    else if (operator_1 !== null) {
+        operand_1 = calculate(
+            operand_1,
+            parseFloat(displayValue),
+            operator_1
+        );
+    }
+
+    operator_1 = operator;
+    waitingForOperand = true;
+}
+
 function handleClick(event) {
     const button = event.target.closest('button');
     if (!button) return;
+
     const input = button.value;
+
     switch(input) {
         case 'clearAll':
             clearAll();
             break;
+
         case 'clearEntry':
             clearEntry();
             break;
+
         case '%':
             inputPercentage();
             break;
+
         case 'sign':
             inputSign();
             break;
+        
+        case '.':
+            inputDecimal();
+            break;
+
+        case '=':
+            operate();
+            break;
+
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            handleOperator(input);
+            break;
+
         default:
             inputNumber(input);
     }
