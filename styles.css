@@ -34,8 +34,8 @@ body {
   font-size: 72px;
   text-align: right;
   padding: 0 2%;
-  width: 85%;
-  margin: 5% 0% 0% 8%;
+  width: 100%;
+  margin: 5% 0% 0% 0%;
   border: 3px solid black;
   background: linear-gradient(to bottom, #C2CBB5 0%, #A4B097 100%);
   color: #2B3324;
