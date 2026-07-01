@@ -40,6 +40,8 @@ body {
   background: linear-gradient(to bottom, #C2CBB5 0%, #A4B097 100%);
   color: #2B3324;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #calc-buttons {
