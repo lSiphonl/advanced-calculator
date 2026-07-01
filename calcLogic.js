@@ -101,22 +101,29 @@ function handleClick(event) {
     if (!button) return;
     const input = button.value;
     switch(input) {
-            case 'clearAll':
-                clearAll();
-                break;
-            case 'clearEntry':
-                clearEntry();
-                break;
-            case '%':
-                inputPercentage();
-                break;
-            case 'sign':
-                inputSign();
-                break;
-            default:
-                inputNumber(input);
-        }
+        case 'clearAll':
+            clearAll();
+            break;
+        case 'clearEntry':
+            clearEntry();
+            break;
+        case '%':
+            inputPercentage();
+            break;
+        case 'sign':
+            inputSign();
+            break;
+        default:
+            inputNumber(input);
     }
+}
+
+function inputDecimal() {
+    if (!displayValue.includes('.')) {
+        displayValue += '.';
+    }
+    updateDisplay();
+}
 
 updateDisplay();
 document.addEventListener('keydown', handleKeyboard);

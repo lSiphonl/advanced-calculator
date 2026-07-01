@@ -13,32 +13,38 @@
       <section id="display-screen">0</section>
 
       <section id="calc-buttons">
-        <section><!--AC, +/-, %, backspace-->
-          <button class="btn-ac" value="clearAll">AC</button>
-          <button class="btn-backspace" value="clearEntry">CE</button>
-          <button class="btn-sign" value="sign">+/-</button>
-          <button class="btn-percent" value="%">%</button>
+
+        <section id="top-buttons">
+          <button class="btn-ac" value="clearAll"> AC </button>
+          <button class="btn-backspace" value="clearEntry"> CE </button>
+          <button class="btn-sign" value="sign"> +/- </button>
+          <button class="btn-op" value="/"> / </button>
         </section>
 
-        <section id="numbers">
-          <button class="btn-number">7</button>
-          <button class="btn-number">8</button>
-          <button class="btn-number">9</button>
+        <section id="main-buttons">
+          <section id="numbers">
+            <button class="btn-num" value="7"> 7 </button>
+            <button class="btn-num" value="8"> 8 </button>
+            <button class="btn-num" value="9"> 9 </button>
+            <button class="btn-num" value="4"> 4 </button>
+            <button class="btn-num" value="5"> 5 </button>
+            <button class="btn-num" value="6"> 6 </button>
+            <button class="btn-num" value="1"> 1 </button>
+            <button class="btn-num" value="2"> 2 </button>
+            <button class="btn-num" value="3"> 3 </button>
+            <button class="btn-num" value="0"> 0 </button>
+            <button class="btn-decimal" value="."> . </button>
+            <button class="btn-percent" value="percent"> % </button>
+          </section>
 
-          <button class="btn-number">4</button>
-          <button class="btn-number">5</button>
-          <button class="btn-number">6</button>
-
-          <button class="btn-number">1</button>
-          <button class="btn-number">2</button>
-          <button class="btn-number">3</button>
-
-          <button class="btn-number-zero">0</button>
-
-          <button class="btn-decimal">.</button>
+          <section id="operators">
+            <button class="btn-op" value="*"> * </button>
+            <button class="btn-op" value="-"> - </button>
+            <button class="btn-op" value="+"> + </button>
+            <button class="btn-equals" value="="> = </button>
+          </section>
         </section>
 
-        <section><!--operators--></section>
       </section>
     </section>
   </body>
