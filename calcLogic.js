@@ -5,7 +5,6 @@ let operator_1 = null;
 let operator_2 = null;
 let result = null;
 let waitingForOperand = false;
-const buttons = document.querySelectorAll('button');
 
 function updateDisplay() {
     const display = document.getElementById('display-screen');
@@ -29,7 +28,7 @@ function clearAll() {
 function clearEntry() {
     if(displayValue.length > 1) {
         displayValue = displayValue.slice(0, -1);
-        if(displayValue === '-' || displayValue === '') {
+        if(displayValue === '-') {
             displayValue = '0';
         }
     }
@@ -83,7 +82,7 @@ function calculate(num1, num2, operator) {
 
         case '/':
             if (num2 === 0) {
-                return "BAD USER!";
+                return "NICE TRY!";
             }
             return num1 / num2;
 
