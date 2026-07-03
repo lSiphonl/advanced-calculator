@@ -5,7 +5,6 @@ let operator_1 = null;
 let operator_2 = null;
 let result = null;
 let waitingForOperand = false;
-const buttons = document.querySelectorAll('button');
 
 function updateDisplay() {
     const display = document.getElementById('display-screen');
@@ -29,6 +28,9 @@ function clearAll() {
 function clearEntry() {
     if(displayValue.length > 1) {
         displayValue = displayValue.slice(0, -1);
+        if(displayValue === '-') {
+            displayValue = '0';
+        }
     }
     else {
         displayValue = '0';
@@ -80,7 +82,7 @@ function calculate(num1, num2, operator) {
 
         case '/':
             if (num2 === 0) {
-                return "BAD USER!";
+                return "NICE TRY!";
             }
             return num1 / num2;
 
@@ -158,16 +160,30 @@ function handleKeyboard(event) {
 }
 
 function handleOperator(operator) {
+    if (
+        operator_1 !== null &&
+        !waitingForOperand
+    ) {
 
-    if (operand_1 === null) {
-        operand_1 = parseFloat(displayValue);
-    } 
-    else if (operator_1 !== null) {
-        operand_1 = calculate(
+        result = calculate(
             operand_1,
             parseFloat(displayValue),
             operator_1
         );
+
+        if (typeof result === "string") {
+            displayValue = result;
+        } 
+        else {
+            displayValue = roundAccurately(result, 10).toString();
+        }
+
+        operand_1 = parseFloat(displayValue);
+        updateDisplay();
+    }
+
+    else {
+        operand_1 = parseFloat(displayValue);
     }
 
     operator_1 = operator;
