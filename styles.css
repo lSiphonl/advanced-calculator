@@ -99,6 +99,13 @@ button {
     color: #2B3324;
     padding: 0;
     box-shadow: 0px 3.2px 0px #2c2e2b;
+    cursor: pointer;
+    transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0px 0px 0px #2c2e2b;
 }
 
 .btn-ac,
