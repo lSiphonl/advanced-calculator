@@ -8,9 +8,13 @@
 }
 
 body {
-  background-color: grey;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  background: grey;
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #calc-body {
@@ -21,10 +25,46 @@ body {
   margin: 5% 0px;
   border: 8px solid #1f2937;
   border-radius: 8px;
-  background-color: #C2CBB5;
+  background-color: #c2cbb5;
   align-items: center;
   flex-direction: column;
   gap: 20px;
+}
+
+#keyboard-shortcuts {
+  width: 280px;
+  padding: 20px;
+  border: 5px solid #1f2937;
+  border-radius: 8px;
+  background: #c2cbb5;
+}
+
+#keyboard-shortcuts h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#keyboard-shortcuts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#keyboard-shortcuts li {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+kbd {
+  background: white;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-weight: bold;
+  text-align: center;
 }
 
 #display-screen {
@@ -37,8 +77,8 @@ body {
   width: 85%;
   margin: 5% 0% 0% 0%;
   border: 3px solid black;
-  background: linear-gradient(to bottom, #C2CBB5 0%, #A4B097 100%);
-  color: #2B3324;
+  background: linear-gradient(to bottom, #c2cbb5 0%, #a4b097 100%);
+  color: #2b3324;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -52,51 +92,56 @@ body {
 }
 
 #top-buttons {
-    display: flex;
-    gap: 8px;
-    width: 100%;
+  display: flex;
+  gap: 8px;
+  width: 100%;
 }
 
 #top-buttons button {
-    flex: 1;
-    height: 70px;
+  flex: 1;
+  height: 70px;
 }
 
 #main-buttons {
-    display: flex;
-    gap: 8px;
-    width: 100%;
+  display: flex;
+  gap: 8px;
+  width: 100%;
 }
 
 #numbers {
-    display: flex;
-    flex-wrap: wrap;
-    width: 75%;
-    gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  gap: 8px;
 }
 
 #numbers button {
-    flex: 1 0 calc((100% - 16px) / 3);
-    height: 70px;
+  flex: 1 0 calc((100% - 16px) / 3);
+  height: 70px;
 }
 
 #operators {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
 }
 
 #operators button {
-    height: 70px;
+  height: 70px;
 }
 
 button {
-    box-sizing: border-box;
-    font-size: 36px;
-    border: none;
-    background-color: #C0EE97;
-    color: #2B3324;
-    padding: 0;
+  box-sizing: border-box;
+  font-size: 36px;
+  border: none;
+  background-color: #c0ee97;
+  color: #2b3324;
+  padding: 0;
 }
 
+@media (max-width: 768px) {
+  #keyboard-shortcuts {
+    display: none;
+  }
+}
