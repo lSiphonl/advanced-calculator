@@ -161,16 +161,30 @@ function handleKeyboard(event) {
 }
 
 function handleOperator(operator) {
+    if (
+        operator_1 !== null &&
+        !waitingForOperand
+    ) {
 
-    if (operand_1 === null) {
-        operand_1 = parseFloat(displayValue);
-    } 
-    else if (operator_1 !== null) {
-        operand_1 = calculate(
+        result = calculate(
             operand_1,
             parseFloat(displayValue),
             operator_1
         );
+
+        if (typeof result === "string") {
+            displayValue = result;
+        } 
+        else {
+            displayValue = roundAccurately(result, 10).toString();
+        }
+
+        operand_1 = parseFloat(displayValue);
+        updateDisplay();
+    }
+
+    else {
+        operand_1 = parseFloat(displayValue);
     }
 
     operator_1 = operator;
