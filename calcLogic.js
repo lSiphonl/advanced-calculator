@@ -5,6 +5,7 @@ let operator_1 = null;
 let operator_2 = null;
 let result = null;
 let waitingForOperand = false;
+const operators = document.querySelectorAll('.btn-op');
 
 function updateDisplay() {
     const display = document.getElementById('display-screen');
@@ -22,6 +23,7 @@ function clearAll() {
     operator_2 = null;
     result = null;
     waitingForOperand = false;
+    deselectOperator();
     updateDisplay();
 }
 
@@ -115,7 +117,8 @@ function operate() {
         operand_1 = null;
         operator_1 = null;
         waitingForOperand = true;
-
+        
+        deselectOperator();
         updateDisplay();
     }
 }
@@ -186,8 +189,21 @@ function handleOperator(operator) {
         operand_1 = parseFloat(displayValue);
     }
 
+    selectOperator(operator);
     operator_1 = operator;
     waitingForOperand = true;
+}
+
+function deselectOperator() {
+    operators.forEach(figure => figure.classList.remove('selected'));
+}
+
+function selectOperator(operator) {
+    deselectOperator();
+    const targetButton = Array.from(operators).find(button => button.value === operator);
+    if(targetButton) {
+        targetButton.classList.add('selected');
+    }
 }
 
 function handleClick(event) {

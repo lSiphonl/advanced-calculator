@@ -22,6 +22,7 @@ body {
   height: auto;
   padding: 20px;
   margin: 5% 0px;
+  margin-left: 8%;
   border: 8px solid #1f2937;
   border-radius: 8px;
   background-color: #c1c2bf;
@@ -43,7 +44,8 @@ body {
 }
 
 #keyboard-shortcuts h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 32px;
   text-align: center;
 }
 
@@ -168,6 +170,10 @@ button:active {
   box-shadow: 0px 3.2px 0px #17315c;
 }
 
+.btn-op.selected {
+    background-color: #90b2e9;/*#c1c2be*/
+}
+
 .btn-equals {
   background-color: #22c55e;
   box-shadow: 0px 3.2px 0px #0e5027;
@@ -176,6 +182,10 @@ button:active {
 @media (max-width: 900px) {
   #keyboard-shortcuts {
     display: none;
+  }
+
+  #calc-body {
+    margin-left: 0px;
   }
 
   body {
